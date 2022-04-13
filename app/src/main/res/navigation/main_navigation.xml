@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.bizmiz.bookieuz.ui.main.MainFragment"
+        android:label="main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        tools:layout="@layout/fragment_splash"
+        android:id="@+id/splash"
+        android:name="com.bizmiz.bookieuz.ui.splash.SplashFragment"
+        android:label="Splash" >
+        <action
+            android:id="@+id/splash_to_main"
+            app:destination="@id/main"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
