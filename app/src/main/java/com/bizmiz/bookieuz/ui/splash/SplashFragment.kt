@@ -1,6 +1,5 @@
 package com.bizmiz.bookieuz.ui.splash
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -25,7 +24,7 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
             val navController =
                 Navigation.findNavController(requireActivity(), R.id.main_container)
-            navController.navigate(R.id.splash_to_main)
+            navController.navigate(R.id.action_splash_to_signInFragment)
         }, 2000)
         binding =
             FragmentSplashBinding.bind(inflater.inflate(R.layout.fragment_splash, container, false))
