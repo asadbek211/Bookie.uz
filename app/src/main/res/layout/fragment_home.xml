@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".ui.main.home.HomeFragment">
 
@@ -29,21 +30,98 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/trendContainer"
         android:layout_width="140dp"
         android:layout_height="190dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="55dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/titleBook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:theme="@style/ShapeAppearanceOverlay.App.CornerSize60dp"
+            android:src="@drawable/image"/>
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_book_fon"
+            app:layout_constraintBottom_toBottomOf="@+id/titleBook"
+            app:layout_constraintEnd_toEndOf="@+id/titleBook"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/titleBook"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:textSize="12dp"
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
+            android:lines="2"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Ashiq bo'lmagan\nkim bor"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/starsLayout"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4" />
+        <LinearLayout
+            android:id="@+id/starsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/titleBook"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4">
+
+            <ImageView
+                android:id="@+id/imgStar1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star"
+                app:tint="@color/purple_500" />
+
+            <ImageView
+                android:id="@+id/imgStar2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star"
+                app:tint="@color/purple_500" />
+
+            <ImageView
+                android:id="@+id/imgStar3"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star"
+                app:tint="@color/purple_500" />
+
+            <ImageView
+                android:id="@+id/imgStar4"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_half_star"
+                app:tint="@color/purple_500" />
+
+            <ImageView
+                android:id="@+id/imgStar5"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star_outline"
+                app:tint="@color/purple_500" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="0dp"
@@ -64,8 +142,8 @@
         android:text="Kitaplar sanı:"
         android:textColor="#000000"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintStart_toEndOf="@+id/trendContainer"
+        app:layout_constraintTop_toTopOf="@+id/trendContainer" />
 
     <TextView
         android:id="@+id/txtBookCount"
@@ -89,7 +167,7 @@
         android:text="Tıńlawshılar sanı:"
         android:textColor="#000000"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toEndOf="@+id/trendContainer"
         app:layout_constraintTop_toBottomOf="@+id/txtBookCount" />
     <TextView
         android:id="@+id/txtListenersCount"
@@ -108,77 +186,55 @@
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="170dp"
-        android:background="@drawable/shape_progress"
         android:layout_height="14dp"
         android:layout_marginTop="5dp"
-        android:progressDrawable="@drawable/shape_progress_indicator"
+        android:progress="70"
+        android:progressDrawable="@drawable/custom_progress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtListenersCount"
         app:layout_constraintTop_toBottomOf="@+id/txtListenersCount" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="Sizdiń kitaplarıńız"
-        android:textColor="#000000"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5" />
-
-    <TextView
-        android:id="@+id/textView5"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="40dp"
-        android:background="@color/black_draw_nav"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/home_shape"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/trendContainer"
+        app:tabIndicator="@drawable/shape_indicator"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@null"
+        app:tabIndicatorHeight="55dp"
+        app:tabMode="fixed"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        app:tabTextColor="@color/black">
 
-    <ImageView
-        android:padding="17dp"
-        android:id="@+id/ivSearch"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_search"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Jańa qosılǵan" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/homeBooksRecView"
-        android:layout_width="0dp"
-        android:layout_marginBottom="70dp"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Eń kóp kórilgen" />
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:spanCount="2"
-        tools:listitem="@layout/book_item" />
-
-    <ImageView
-        android:id="@+id/imgPlay"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="40dp"
-        android:padding="5dp"
-        android:src="@drawable/ic_play"
+        android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivSearch"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintVertical_bias="1.0"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

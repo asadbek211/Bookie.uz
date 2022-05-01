@@ -5,6 +5,10 @@
         android:icon="@drawable/home_item"
         android:title="Bas bet" />
     <item
+        android:id="@+id/myBook"
+        android:icon="@drawable/my_book_item"
+        android:title="Kitaplarım" />
+    <item
         android:id="@+id/genre"
         android:icon="@drawable/genre_item"
         android:title="Janr" />

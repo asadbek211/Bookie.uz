@@ -10,8 +10,13 @@
         android:name="com.bizmiz.bookieuz.ui.splash.SplashFragment"
         android:label="Splash" >
         <action
-            android:id="@+id/action_splash_to_signInFragment"
-            app:destination="@id/signInFragment"
+            android:id="@+id/action_splash_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_drawer"
+            app:destination="@id/drawer"
             app:popUpTo="@id/splash"
             app:popUpToInclusive="true" />
     </fragment>
@@ -19,7 +24,13 @@
         tools:layout="@layout/fragment_drawer_main"
         android:id="@+id/drawer"
         android:name="com.bizmiz.bookieuz.ui.main.drawer_main.DrawerMainFragment"
-        android:label="DrawerMainFragment"/>
+        android:label="DrawerMainFragment">
+        <action
+            android:id="@+id/action_drawer_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/drawer"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.bizmiz.bookieuz.ui.auth.sign_in.SignInFragment"
@@ -32,11 +43,22 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.bizmiz.bookieuz.ui.auth.sign_up.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpFragment_to_drawer"
+            app:destination="@id/drawer" />
+    </fragment>
 </navigation>

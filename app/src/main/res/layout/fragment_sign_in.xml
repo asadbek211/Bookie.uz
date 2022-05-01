@@ -6,119 +6,135 @@
     android:layout_height="match_parent"
     tools:context=".ui.auth.sign_in.SignInFragment">
 
-  <ImageView
-      android:id="@+id/imageView2"
-      android:layout_width="200dp"
-      android:layout_height="200dp"
-      android:scaleType="fitXY"
-      android:src="@drawable/ic_frame_sign_in"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_frame_sign_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-  <TextView
-      android:id="@+id/textView2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="50dp"
-      android:layout_marginTop="20dp"
-      android:fontFamily="@font/montserrat_medium"
-      android:text="Dizimge kirisiw"
-      android:textColor="#000000"
-      android:textSize="30dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Dizimge kirisiw"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-  <androidx.appcompat.widget.AppCompatEditText
-      android:id="@+id/loginName"
-      android:layout_width="0dp"
-      android:layout_marginTop="30dp"
-      android:layout_marginEnd="50dp"
-      android:paddingBottom="10dp"
-      android:paddingTop="10dp"
-      android:layout_height="wrap_content"
-      android:background="@android:color/transparent"
-      android:hint="Loginingiz"
-      android:inputType="textCapWords|textCapSentences"
-      android:paddingEnd="10dp"
-      android:paddingStart="5dp"
-      android:singleLine="true"
-      android:textColor="@color/black"
-      android:textSize="18sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/textView2"
-      app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-  <TextView
-      android:id="@+id/textView4"
-      android:layout_width="0dp"
-      android:layout_height="4dp"
-      android:background="@color/purple_500"
-      app:layout_constraintEnd_toEndOf="@+id/loginName"
-      app:layout_constraintStart_toStartOf="@+id/loginName"
-      app:layout_constraintTop_toBottomOf="@+id/loginName" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/loginNumberEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_baseline_phone"
+            android:drawablePadding="10dp"
+            android:hint="Telefon nomerińiz"
+            android:inputType="number"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/purple_500"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/loginNumber"
+        app:passwordToggleEnabled="true">
 
-  <androidx.appcompat.widget.AppCompatEditText
-      android:id="@+id/loginPassword"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="40dp"
-      android:layout_marginEnd="50dp"
-      android:background="@android:color/transparent"
-      android:hint="Parol"
-      android:inputType="textCapWords|textCapSentences"
-      android:paddingStart="5dp"
-      android:paddingTop="10dp"
-      android:paddingEnd="10dp"
-      android:paddingBottom="10dp"
-      android:singleLine="true"
-      android:textColor="@color/black"
-      android:textSize="18sp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/textView2"
-      app:layout_constraintTop_toBottomOf="@+id/textView4" />
-  <TextView
-      android:id="@+id/textView5"
-      android:layout_width="0dp"
-      android:layout_height="4dp"
-      android:background="@color/purple_500"
-      app:layout_constraintEnd_toEndOf="@+id/loginPassword"
-      app:layout_constraintStart_toStartOf="@+id/loginPassword"
-      app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/loginPasswordEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_baseline_lock"
+            android:drawablePadding="10dp"
+            android:hint="Parolıńız"
+            android:inputType="numberPassword"
+            android:paddingStart="5dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-  <androidx.appcompat.widget.AppCompatButton
-      android:id="@+id/btnSignIn"
-      android:layout_width="120dp"
-      android:layout_height="40dp"
-      android:layout_marginTop="30dp"
-      android:background="@drawable/shape_button"
-      android:text="Baslaw"
-      android:textAllCaps="false"
-      android:textColor="@color/white"
-      app:layout_constraintStart_toStartOf="@+id/loginPassword"
-      app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/purple_500" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-  <TextView
-      android:textColor="@color/black_icon"
-      android:id="@+id/textView6"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="40dp"
-      android:text="Akkaunt joqpa?"
-      android:textSize="20dp"
-      app:layout_constraintStart_toStartOf="@+id/btnSignIn"
-      app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shape_button"
+        android:text="Baslaw"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/loginPassword"
+        app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
 
-  <TextView
-      android:paddingStart="10dp"
-      android:textColor="@color/purple_500"
-      android:id="@+id/txtSignUp"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="40dp"
-      android:text="Dizimnen ótiw"
-      android:textSize="20dp"
-      app:layout_constraintStart_toEndOf="@+id/textView6"
-      app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Akkaunt joqpa?"
+        android:textColor="@color/black_icon"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+    <TextView
+        android:id="@+id/txtSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingStart="10dp"
+        android:text="Dizimnen ótiw"
+        android:textColor="@color/purple_500"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

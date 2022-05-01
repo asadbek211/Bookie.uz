@@ -20,8 +20,8 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         app:itemIconTint="@color/menu_item_selector"

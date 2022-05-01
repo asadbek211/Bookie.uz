@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constLay"
-android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/container"
@@ -16,7 +15,13 @@ android:layout_height="match_parent">
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
+  <LinearLayout
+      android:visibility="gone"
+      android:id="@+id/containerVisible"
+      android:background="#1E000000"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/drawerContainer"
         android:layout_width="310dp"
@@ -83,14 +88,15 @@ android:layout_height="match_parent">
             app:layout_constraintStart_toStartOf="@+id/txtAdditional"
             app:layout_constraintTop_toBottomOf="@+id/txtAdditional" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-<ImageView
-    android:id="@+id/drawerBtn"
-    android:layout_width="70dp"
-    android:layout_height="50dp"
-    android:layout_marginStart="15dp"
-    android:layout_marginTop="10dp"
-    android:padding="16dp"
-    android:src="@drawable/ic_menu"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/drawerBtn"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

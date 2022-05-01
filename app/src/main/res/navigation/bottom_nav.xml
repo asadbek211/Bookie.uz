@@ -18,7 +18,11 @@
         android:id="@+id/genre"
         android:name="com.bizmiz.bookieuz.ui.main.genre.GenreFragment"
         android:label="genre"
-        tools:layout="@layout/fragment_genre" />
+        tools:layout="@layout/fragment_genre" >
+        <action
+            android:id="@+id/action_genre_to_viewBook"
+            app:destination="@id/viewBook" />
+    </fragment>
     <fragment
         android:id="@+id/user"
         android:name="com.bizmiz.bookieuz.ui.main.user.UserFragment"
@@ -26,7 +30,25 @@
         tools:layout="@layout/fragment_user" />
     <fragment
         android:id="@+id/viewBook"
-        android:name="com.bizmiz.bookieuz.ui.main.view_book.ViewBookFragment"
+        android:name="com.bizmiz.bookieuz.ui.main.book_details.BookDetailsFragment"
         android:label="view_book"
-        tools:layout="@layout/fragment_view_book" />
+        tools:layout="@layout/fragment_book_details" >
+        <action
+            android:id="@+id/viewBook_to_audioPlayer"
+            app:destination="@id/audioPlayer" />
+    </fragment>
+    <fragment
+        android:id="@+id/myBook"
+        android:name="com.bizmiz.bookieuz.ui.main.my_book.MyBookFragment"
+        android:label="my_book"
+        tools:layout="@layout/fragment_my_book" >
+        <action
+            android:id="@+id/action_myBook_to_viewBook"
+            app:destination="@id/viewBook" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioPlayer"
+        android:name="com.bizmiz.bookieuz.ui.main.player.AudioPlayerFragment"
+        android:label="audio_player"
+        tools:layout="@layout/fragment_audio_player" />
 </navigation>
