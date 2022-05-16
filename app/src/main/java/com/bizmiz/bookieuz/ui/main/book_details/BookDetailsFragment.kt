@@ -24,6 +24,7 @@ class BookDetailsFragment : Fragment() {
     private var audios: List<AudioDetails>? = null
     private  var bookName = ""
     private  var bookAuthor = ""
+    private  var dublyajAuthor = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,7 +51,8 @@ class BookDetailsFragment : Fragment() {
             val bundle = bundleOf(
                 "audios" to audios,
                 "bookName" to bookName,
-                "bookAuthor" to bookAuthor
+                "bookAuthor" to bookAuthor,
+                "dublyajAuthor" to dublyajAuthor
             )
             val navController =
                 Navigation.findNavController(requireActivity(), R.id.basicNavigation)
@@ -68,11 +70,13 @@ class BookDetailsFragment : Fragment() {
                         audios = it.data.audios
                         bookName = it.data.book.name
                         bookAuthor = it.data.book.author
-                        Glide.with(this).load(it.data.book.images)
+                        dublyajAuthor = it.data.book.dublyaj_actor_name
+                        Glide.with(this).load(it.data.book.image)
                             .into(binding.bookImages)
                         binding.tvBookTitle.text = it.data.book.name
                         binding.tvBookAuthor.text = it.data.book.author
                         binding.tvBookDescription.text = it.data.book.description
+                        binding.views.text = it.data.book.view.toString()
                         binding.sectionCount.text = "Bo'limlar soni: ${it.data.audios.size}"
                     }
                 }

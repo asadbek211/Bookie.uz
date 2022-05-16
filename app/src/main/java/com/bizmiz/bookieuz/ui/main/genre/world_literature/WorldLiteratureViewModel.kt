@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.bizmiz.bookieuz.ui.auth.api.NetworkHelper
 import com.bizmiz.bookieuz.ui.model.CategoryBooks
 import com.bizmiz.bookieuz.ui.model.DataX
+import com.bizmiz.bookieuz.ui.model.DataXX
 import com.bizmiz.bookieuz.ui.model.GenericResponse
 import com.bizmiz.bookieuz.utils.Resource
 

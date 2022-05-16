@@ -55,72 +55,12 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_book_fon"
+            android:src="@drawable/ic_book_fone"
             app:layout_constraintBottom_toBottomOf="@+id/titleBook"
             app:layout_constraintEnd_toEndOf="@+id/titleBook"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/titleBook"
             app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:textSize="12dp"
-            android:id="@+id/tvTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/montserrat_semi_bold"
-            android:gravity="center"
-            android:lines="2"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="Ashiq bo'lmagan\nkim bor"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/starsLayout"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4" />
-        <LinearLayout
-            android:id="@+id/starsLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/titleBook"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4">
-
-            <ImageView
-                android:id="@+id/imgStar1"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_star"
-                app:tint="@color/purple_500" />
-
-            <ImageView
-                android:id="@+id/imgStar2"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_star"
-                app:tint="@color/purple_500" />
-
-            <ImageView
-                android:id="@+id/imgStar3"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_star"
-                app:tint="@color/purple_500" />
-
-            <ImageView
-                android:id="@+id/imgStar4"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_half_star"
-                app:tint="@color/purple_500" />
-
-            <ImageView
-                android:id="@+id/imgStar5"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_star_outline"
-                app:tint="@color/purple_500" />
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:id="@+id/imageView5"

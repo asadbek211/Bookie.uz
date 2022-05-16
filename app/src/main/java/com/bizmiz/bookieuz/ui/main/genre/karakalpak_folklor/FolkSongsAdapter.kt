@@ -21,9 +21,8 @@ class FolkSongsAdapter : RecyclerView.Adapter<FolkSongsAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: FolkloreBookItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun getBook(position: Int,dataXX: DataXX) {
-            Glide.with(binding.root.context).load(dataXX.images)
+            Glide.with(binding.root.context).load(dataXX.image)
                 .into(binding.bookImages)
-            binding.tvTitle.text = dataXX.name
             binding.container.setOnClickListener {
                 onclick.invoke(dataXX.id)
             }

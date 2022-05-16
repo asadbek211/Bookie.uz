@@ -1,10 +1,10 @@
 package com.bizmiz.bookieuz.ui.main.genre.karakalpak_folklor
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.os.bundleOf
@@ -18,17 +18,19 @@ import com.bizmiz.bookieuz.ui.model.DataXX
 import com.bizmiz.bookieuz.utils.ResourceState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
+
 class KarakalpakFolkloreFragment : Fragment() {
     private lateinit var folkSongsAdapter: FolkSongsAdapter
-    private val karakalpakFalkloreViewModel:KarakalpakFalkloreViewModel by viewModel()
+    private val karakalpakFalkloreViewModel: KarakalpakFalkloreViewModel by viewModel()
     private lateinit var binding: FragmentKarakalpakFolkloreBinding
     private var currentPage = 1
-    private var total = 0
+    private var nextPage: String? = null
+    private var categoryId = 5
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        karakalpakFalkloreViewModel.getCategoryDataByPage(5, 1)
+        karakalpakFalkloreViewModel.getCategoryDataByPage(categoryId, 1)
         karakalpakFalkloreViewModel.getSubcategory()
         folkSongsAdapter = FolkSongsAdapter()
         binding = FragmentKarakalpakFolkloreBinding.bind(
@@ -44,31 +46,60 @@ class KarakalpakFolkloreFragment : Fragment() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (currentPage < total) {
+                    if (nextPage != null) {
                         currentPage += 1
-                        karakalpakFalkloreViewModel.getCategoryDataByPage(5, currentPage)
+                        karakalpakFalkloreViewModel.getCategoryDataByPage(categoryId, currentPage)
                     }
                 }
             }
         })
-        folkSongsAdapter.onClickListener {bookId->
+        folkSongsAdapter.onClickListener { bookId ->
             val bundle = bundleOf(
                 "bookId" to bookId
             )
             val navController =
                 Navigation.findNavController(requireActivity(), R.id.basicNavigation)
-            navController.navigate(R.id.action_genre_to_viewBook,bundle)
+            navController.navigate(R.id.action_genre_to_viewBook, bundle)
         }
         subcategoryObserve()
         categoryDataObserve()
+        binding.spCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parentView: AdapterView<*>?,
+                selectedItemView: View?,
+                position: Int,
+                id: Long
+            ) {
+                when (position) {
+                    0 -> {
+                        categoryId = 5
+                    }
+                    1 -> {
+                        categoryId = 6
+                    }
+                    2 -> {
+                        categoryId = 7
+                    }
+                }
+                currentPage = 1
+                karakalpakFalkloreViewModel.getCategoryDataByPage(categoryId, currentPage)
+                folkSongsAdapter.categoryList.clear()
+            }
+
+            override fun onNothingSelected(parentView: AdapterView<*>?) {
+                // your code here
+            }
+        }
         return binding.root
     }
+
     private fun subcategoryObserve() {
         karakalpakFalkloreViewModel.subcategoryData.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 ResourceState.SUCCESS -> {
-                    if (it!=null){
-                        val adapter = ArrayAdapter(requireActivity(), R.layout.spinner_item, it.data!!)
+                    if (it != null) {
+                        val adapter =
+                            ArrayAdapter(requireActivity(), R.layout.spinner_item, it.data!!)
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                         binding.spCategory.adapter = adapter
                     }
@@ -80,15 +111,17 @@ class KarakalpakFolkloreFragment : Fragment() {
             }
         })
     }
+
     private fun categoryDataObserve() {
         karakalpakFalkloreViewModel.categoryData.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 ResourceState.SUCCESS -> {
                     currentPage = it.data?.current_page!!
-                    total = it.data.total
+                    nextPage = it.data.next_page_url
                     if (currentPage == 1) {
                         folkSongsAdapter.categoryList =
                             (it.data.data as ArrayList<DataXX>?)!!
+                        folkSongsAdapter.notifyDataSetChanged()
                     } else {
                         folkSongsAdapter.categoryList.addAll(it.data.data)
                         folkSongsAdapter.notifyDataSetChanged()

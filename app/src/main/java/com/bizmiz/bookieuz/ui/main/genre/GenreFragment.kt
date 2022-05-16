@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.bizmiz.bookieuz.R
 import com.bizmiz.bookieuz.databinding.FragmentGenreBinding
 import com.bizmiz.bookieuz.ui.main.genre.view_model.GenreViewModel
@@ -39,6 +40,11 @@ class GenreFragment : Fragment() {
             activity ?: return binding.root, fragments
         )
         categoryObserve()
+        binding.ivSearch.setOnClickListener {
+            val navController =
+                Navigation.findNavController(requireActivity(), R.id.main_container)
+            navController.navigate(R.id.action_drawer_to_searchFragment)
+        }
         return binding.root
     }
     private fun categoryObserve() {

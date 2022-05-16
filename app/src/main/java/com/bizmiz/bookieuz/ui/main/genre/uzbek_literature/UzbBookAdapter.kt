@@ -21,9 +21,8 @@ class UzbBookAdapter : RecyclerView.Adapter<UzbBookAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: UzbBookItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun getBook(position: Int,dataXX: DataXX) {
-            Glide.with(binding.root.context).load(dataXX.images)
+            Glide.with(binding.root.context).load(dataXX.image)
                 .into(binding.bookImages)
-            binding.tvTitle.text = dataXX.name
             binding.container.setOnClickListener {
                 onclick.invoke(dataXX.id)
             }

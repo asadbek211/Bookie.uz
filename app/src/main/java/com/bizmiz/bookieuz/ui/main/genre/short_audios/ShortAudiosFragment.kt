@@ -21,7 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class ShortAudiosFragment : Fragment() {
     private val shortAudiosViewModel:ShortAudiosViewModel by viewModel()
     private var currentPage = 1
-    private var total = 0
+    private var nextPage:String? = null
     private lateinit var shortAudiosAdapter: ShortAudiosAdapter
     private lateinit var binding: FragmentShortAudiosBinding
     override fun onCreateView(
@@ -37,7 +37,7 @@ class ShortAudiosFragment : Fragment() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (currentPage < total) {
+                    if (nextPage!=null) {
                         currentPage += 1
                         shortAudiosViewModel.getCategoryDataByPage(4, currentPage)
                     }
@@ -61,7 +61,7 @@ class ShortAudiosFragment : Fragment() {
             when (it.status) {
                 ResourceState.SUCCESS -> {
                     currentPage = it.data?.current_page!!
-                    total = it.data.total
+                    nextPage = it.data.next_page_url
                     if (currentPage == 1) {
                         shortAudiosAdapter.categoryList =
                             (it.data.data as ArrayList<DataXX>?)!!

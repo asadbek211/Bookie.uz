@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:background="@drawable/shape_notife"
         android:id="@+id/ivSearch"
         android:layout_width="50dp"
         android:layout_height="50dp"

@@ -112,6 +112,7 @@ class NetworkHelper(private val apiClient: Retrofit) {
                 call: Call<GenericResponse<LatestData>>,
                 response: Response<GenericResponse<LatestData>>
             ) {
+                Log.d("lastest",response.body()?.data?.lastest.toString())
                 CoroutineScope(Dispatchers.IO).launch {
                     val responseData = response.body()?.data?.lastest
                     withContext(Dispatchers.Main) {
@@ -184,21 +185,18 @@ class NetworkHelper(private val apiClient: Retrofit) {
         onFailure: (msg: String?) -> Unit
     ) {
         val call = apiClient.create(ApiInterface::class.java).getSubcategory()
-        call.enqueue(object : Callback<GenericResponse<List<List<Subcategory>>>> {
+        call.enqueue(object : Callback<GenericResponse<List<Subcategory>>> {
             override fun onResponse(
-                call: Call<GenericResponse<List<List<Subcategory>>>>,
-                response: Response<GenericResponse<List<List<Subcategory>>>>
+                call: Call<GenericResponse<List<Subcategory>>>,
+                response: Response<GenericResponse<List<Subcategory>>>
             ) {
                 val responseData = arrayListOf<String>()
                 CoroutineScope(Dispatchers.IO).launch {
                     response.body()?.data?.forEach {
-                        it.forEach {
                             if (it.category_id ==5){
                                 responseData.add(it.name)
                             }
-                        }
                     }
-                    Log.d("lists",response.body().toString())
                     withContext(Dispatchers.Main) {
                         if (responseData != null) {
                             onSuccess.invoke(responseData)
@@ -207,7 +205,7 @@ class NetworkHelper(private val apiClient: Retrofit) {
                 }
             }
 
-            override fun onFailure(call: Call<GenericResponse<List<List<Subcategory>>>>?, t: Throwable?) {
+            override fun onFailure(call: Call<GenericResponse<List<Subcategory>>>?, t: Throwable?) {
                 onFailure.invoke(t?.message)
                 Log.d("lists",t.toString())
             }
@@ -240,6 +238,32 @@ class NetworkHelper(private val apiClient: Retrofit) {
             override fun onFailure(call: Call<GenericResponse<BookDetailsResponse>>?, t: Throwable?) {
                 onFailure.invoke(t?.message)
                 Log.d("lists",t.toString())
+            }
+
+        })
+    }
+    fun getQueryData(
+        query:String,
+        onSuccess: (response: List<BookDetails>) -> Unit,
+        onFailure: (msg: String?) -> Unit
+    ) {
+        val call = apiClient.create(ApiInterface::class.java).getSearchResponse(query)
+        call.enqueue(object : Callback<GenericResponse<List<BookDetails>>> {
+            override fun onResponse(
+                call: Call<GenericResponse<List<BookDetails>>>,
+                response: Response<GenericResponse<List<BookDetails>>>
+            ) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val responseData = response.body()?.data
+                    withContext(Dispatchers.Main) {
+                        if (responseData != null) {
+                            onSuccess.invoke(responseData)
+                        }
+                    }
+                }
+            }
+            override fun onFailure(call: Call<GenericResponse<List<BookDetails>>>?, t: Throwable?) {
+                onFailure.invoke(t?.message)
             }
 
         })

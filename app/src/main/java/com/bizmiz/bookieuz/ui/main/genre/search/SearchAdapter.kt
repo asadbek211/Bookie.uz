@@ -1,17 +1,15 @@
-package com.bizmiz.bookieuz.ui.main.genre.karakalpak_literature
+package com.bizmiz.bookieuz.ui.main.genre.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bizmiz.bookieuz.R
 import com.bizmiz.bookieuz.databinding.WorldBookItemBinding
-import com.bizmiz.bookieuz.ui.model.CategoryBooks
-import com.bizmiz.bookieuz.ui.model.DataXX
-import com.bizmiz.bookieuz.ui.model.Lastest
+import com.bizmiz.bookieuz.ui.model.BookDetails
 import com.bumptech.glide.Glide
 
-class KarakalpakLiteratureAdapter : RecyclerView.Adapter<KarakalpakLiteratureAdapter.ViewHolder>() {
-    var categoryList:ArrayList<DataXX> = arrayListOf()
+class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+    var categoryList: List<BookDetails> = arrayListOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -23,11 +21,12 @@ class KarakalpakLiteratureAdapter : RecyclerView.Adapter<KarakalpakLiteratureAda
 
     inner class ViewHolder(private val binding: WorldBookItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun getBook(position: Int,dataXX: DataXX) {
-            Glide.with(binding.root.context).load(dataXX.image)
+        fun getBook(bookDetails: BookDetails) {
+            binding.bookImages.setImageResource(R.drawable.test_image2)
+            Glide.with(binding.root.context).load(bookDetails.image)
                 .into(binding.bookImages)
             binding.container.setOnClickListener {
-                onclick.invoke(dataXX.id)
+                onclick.invoke(bookDetails.id)
             }
         }
     }
@@ -39,7 +38,7 @@ class KarakalpakLiteratureAdapter : RecyclerView.Adapter<KarakalpakLiteratureAda
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.getBook(position,categoryList[position])
+        holder.getBook(categoryList[position])
     }
 
     override fun getItemCount(): Int = categoryList.size

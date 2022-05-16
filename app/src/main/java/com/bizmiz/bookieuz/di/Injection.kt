@@ -6,6 +6,7 @@ import com.bizmiz.bookieuz.ui.auth.sign_up.SignUpViewModel
 import com.bizmiz.bookieuz.ui.main.book_details.BookDetailsViewModel
 import com.bizmiz.bookieuz.ui.main.genre.karakalpak_folklor.KarakalpakFalkloreViewModel
 import com.bizmiz.bookieuz.ui.main.genre.karakalpak_literature.KarakalpakLiteratureViewModel
+import com.bizmiz.bookieuz.ui.main.genre.search.SearchViewModel
 import com.bizmiz.bookieuz.ui.main.genre.short_audios.ShortAudiosViewModel
 import com.bizmiz.bookieuz.ui.main.genre.uzbek_literature.UzbekLiteratureViewModel
 import com.bizmiz.bookieuz.ui.main.genre.view_model.GenreViewModel
@@ -31,4 +32,5 @@ val viewModelModule = module {
     viewModel { ShortAudiosViewModel(get()) }
     viewModel { KarakalpakFalkloreViewModel(get()) }
     viewModel { BookDetailsViewModel(get()) }
+    viewModel { SearchViewModel(get()) }
 }

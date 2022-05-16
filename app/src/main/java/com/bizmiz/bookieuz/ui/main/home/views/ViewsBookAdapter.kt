@@ -23,9 +23,8 @@ class ViewsBookAdapter : RecyclerView.Adapter<ViewsBookAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ViewsBookItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun getBook(view: View) {
-            Glide.with(binding.root.context).load(view.images)
+            Glide.with(binding.root.context).load(view.image)
                 .into(binding.bookImages)
-            binding.tvTitle.text = view.name
             binding.bookImages.setOnClickListener {
                 onclick.invoke(view.id)
             }

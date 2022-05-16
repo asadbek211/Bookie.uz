@@ -40,8 +40,8 @@ class HomeFragment : Fragment() {
         }
         binding = FragmentHomeBinding.bind(inflater.inflate(R.layout.fragment_home, container, false))
         binding.trendContainer.setOnClickListener {
-            val navController = Navigation.findNavController(requireActivity(), R.id.basicNavigation)
-            navController.navigate(R.id.home_to_viewBook)
+//            val navController = Navigation.findNavController(requireActivity(), R.id.basicNavigation)
+//            navController.navigate(R.id.home_to_viewBook)
         }
         val list: ArrayList<String> = arrayListOf(
             "Jańa qosılǵan",

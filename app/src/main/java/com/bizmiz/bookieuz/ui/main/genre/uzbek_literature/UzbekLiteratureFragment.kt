@@ -20,7 +20,7 @@ class UzbekLiteratureFragment : Fragment() {
     private val uzbekLiteratureViewModel: UzbekLiteratureViewModel by viewModel()
     private lateinit var uzbBookAdapter: UzbBookAdapter
     private var currentPage = 1
-    private var total = 0
+    private var nextPage:String? = null
     private lateinit var binding: FragmentUzbekLiteratureBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +41,7 @@ class UzbekLiteratureFragment : Fragment() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (currentPage < total) {
+                    if (nextPage!=null) {
                         currentPage += 1
                         uzbekLiteratureViewModel.getCategoryDataByPage(2, currentPage)
                     }
@@ -64,7 +64,7 @@ class UzbekLiteratureFragment : Fragment() {
             when (it.status) {
                 ResourceState.SUCCESS -> {
                     currentPage = it.data?.current_page!!
-                    total = it.data.total
+                    nextPage = it.data.next_page_url
                     if (currentPage == 1) {
                         uzbBookAdapter.categoryList =
                             (it.data.data as ArrayList<DataXX>?)!!

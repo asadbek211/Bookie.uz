@@ -25,9 +25,8 @@ class WorldBookAdapter : RecyclerView.Adapter<WorldBookAdapter.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun getBook(position: Int,dataXX: DataXX) {
             binding.bookImages.setImageResource(R.drawable.test_image2)
-            Glide.with(binding.root.context).load(dataXX.images)
+            Glide.with(binding.root.context).load(dataXX.image)
                 .into(binding.bookImages)
-            binding.tvTitle.text = dataXX.name
             binding.container.setOnClickListener {
                 onclick.invoke(dataXX.id)
             }

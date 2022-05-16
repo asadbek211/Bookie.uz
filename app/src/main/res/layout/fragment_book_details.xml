@@ -101,32 +101,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvBookAuthor" />
-
     <TextView
         android:id="@+id/sectionCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/montserrat_semi_bold"
-        android:textColor="#000000"
-        android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgPlay" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/montserrat_medium"
-        android:text="Reyting"
+        android:text=""
         android:textColor="#000000"
-        android:textSize="18dp"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/sectionCount" />
+        app:layout_constraintTop_toBottomOf="@+id/imgPlay" />
 
     <TextView
         android:id="@+id/textView5"
@@ -139,46 +125,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/sectionCount" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <TextView
+        android:id="@+id/views"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="@+id/textView5">
-
-        <ImageView
-            android:id="@+id/imgStar1"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:id="@+id/imgStar2"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:id="@+id/imgStar3"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_star" />
-
-        <ImageView
-            android:id="@+id/imgStar4"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_half_star" />
-
-        <ImageView
-            android:id="@+id/imgStar5"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_star_outline" />
-    </LinearLayout>
+        android:drawableStart="@drawable/ic_eye"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/sectionCount"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/sectionCount" />
 
     <TextView
         android:layout_marginTop="30dp"

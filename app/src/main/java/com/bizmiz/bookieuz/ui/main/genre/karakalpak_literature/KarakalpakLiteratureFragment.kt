@@ -21,7 +21,7 @@ class KarakalpakLiteratureFragment : Fragment() {
     private val karakalpakLiteratureViewModel: KarakalpakLiteratureViewModel by viewModel()
     private lateinit var karakalpakLiteratureAdapter: KarakalpakLiteratureAdapter
     private var currentPage = 1
-    private var total = 0
+    private var nextPage:String? = null
     private lateinit var binding: FragmentKarakalpakLiteratureBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +50,7 @@ class KarakalpakLiteratureFragment : Fragment() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (currentPage < total) {
+                    if (nextPage!=null) {
                         currentPage += 1
                         karakalpakLiteratureViewModel.getCategoryDataByPage(3, currentPage)
                     }
@@ -66,7 +66,7 @@ class KarakalpakLiteratureFragment : Fragment() {
             when (it.status) {
                 ResourceState.SUCCESS -> {
                     currentPage = it.data?.current_page!!
-                    total = it.data.total
+                    nextPage = it.data.next_page_url
                     if (currentPage == 1) {
                         karakalpakLiteratureAdapter.categoryList =
                             (it.data.data as ArrayList<DataXX>?)!!

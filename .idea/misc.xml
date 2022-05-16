@@ -3,16 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_dropdown_item.xml" value="0.1763157894736842" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/custom_drawable.xml" value="0.15" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/custom_progress.xml" value="0.1899122807017544" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/home_item.xml" value="0.22552083333333334" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/home_shape.xml" value="0.1475" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_arrow_back.xml" value="0.159" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_arrow_down.xml" value="0.1899122807017544" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_baseline_lock.xml" value="0.15" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_baseline_logout.xml" value="0.15" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_baseline_person.xml" value="0.15" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_baseline_phone.xml" value="0.15" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.159" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_book_fon.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_book_fone.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_bookmark_border.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_bookmark_outline.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_ellipse_book_view.xml" value="0.1899122807017544" />
@@ -29,6 +33,7 @@
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_play.xml" value="0.15" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_previous.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_repeat_all.xml" value="0.1475" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_repeat_off.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_repeat_one.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_shuffle_on.xml" value="0.1475" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/ic_star.xml" value="0.15" />
@@ -39,8 +44,10 @@
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_bottom.xml" value="0.20092592592592592" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_button.xml" value="0.22552083333333334" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_indicator.xml" value="0.1475" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_notife.xml" value="0.159" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_progress.xml" value="0.22552083333333334" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_progress_indicator.xml" value="0.22552083333333334" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_search.xml" value="0.159" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/shape_stroke.xml" value="0.1899122807017544" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/drawable/thumb_shape.xml" value="0.15" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/activity_main.xml" value="0.1953125" />
@@ -48,7 +55,7 @@
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/folklore_book_item.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/folklore_item.xml" value="0.209375" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_audio_player.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_book_details.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_book_details.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_drawer_main.xml" value="0.16" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_favourite_book.xml" value="0.1763157894736842" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_genre.xml" value="0.209375" />
@@ -59,6 +66,7 @@
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_main.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_my_book.xml" value="0.1763157894736842" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_play_my_books.xml" value="0.1763157894736842" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_search.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_short_audios.xml" value="0.1763157894736842" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_sign_in.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_sign_up.xml" value="0.1953125" />
@@ -68,7 +76,7 @@
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_view_book.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_views.xml" value="0.1763157894736842" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/fragment_world_literature.xml" value="0.22" />
-        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/latest_book_item.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/latest_book_item.xml" value="0.5" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/new_book_item.xml" value="0.1763157894736842" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/poesy_item.xml" value="0.209375" />
         <entry key="..\:/AndroidStudioProjects/Bookieuz2/app/src/main/res/layout/popular_item.xml" value="0.33" />

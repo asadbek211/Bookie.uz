@@ -23,17 +23,22 @@ interface ApiInterface {
 
     @GET("api/subcategory")
     fun getSubcategory(
-    ): Call<GenericResponse<List<List<Subcategory>>>>
+    ): Call<GenericResponse<List<Subcategory>>>
 
-    @GET("api/book/")
+    @GET("api/book")
     fun getLatest(
     ): Call<GenericResponse<LatestData>>
 
-    @GET("api/book/show/{categoryId}?")
+    @GET("api/book/{categoryId}?")
     fun getCategoryDataByPage(
         @Path("categoryId") categoryId: Int,
         @Query("page") page: Int,
     ): Call<GenericResponse<CategoryBooks>>
+
+    @GET("api/search/{query}")
+    fun getSearchResponse(
+        @Path("query") query: String
+    ): Call<GenericResponse<List<BookDetails>>>
 
     @GET("api/audio/{bookId}")
     fun getAudios(

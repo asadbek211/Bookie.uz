@@ -24,9 +24,8 @@ class LatestBookAdapter : RecyclerView.Adapter<LatestBookAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: LatestBookItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun getBook(lastest: Lastest) {
-            Glide.with(binding.root.context).load(lastest.images)
+            Glide.with(binding.root.context).load(lastest.image)
                 .into(binding.bookImages)
-            binding.tvTitle.text = lastest.name
             binding.bookImages.setOnClickListener {
                 onclick.invoke(lastest.id)
             }

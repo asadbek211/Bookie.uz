@@ -22,7 +22,7 @@ class WorldLiteratureFragment : Fragment() {
     private val worldLiteratureViewModel: WorldLiteratureViewModel by viewModel()
     private lateinit var worldBookAdapter: WorldBookAdapter
     private var currentPage = 1
-    private var total = 0
+    private var nextPage:String? = null
     private lateinit var binding: FragmentWorldLiteratureBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +50,7 @@ class WorldLiteratureFragment : Fragment() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (currentPage<total){
+                    if (nextPage!=null){
                         currentPage += 1
                         worldLiteratureViewModel.getCategoryDataByPage(1,currentPage )
                     }
@@ -66,7 +66,7 @@ class WorldLiteratureFragment : Fragment() {
             when (it.status) {
                 ResourceState.SUCCESS -> {
                     currentPage = it.data?.current_page!!
-                    total = it.data.total
+                    nextPage = it.data.next_page_url
                     if (currentPage ==1){
                         worldBookAdapter.categoryList = (it.data.data as ArrayList<DataXX>?)!!
                     }else{
